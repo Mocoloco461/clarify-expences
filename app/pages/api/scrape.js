@@ -176,7 +176,7 @@ async function handler(req, res) {
       showBrowser: isBank,
       verbose: true,
       timeout: 120000, // 120 seconds timeout for each operation (increased)
-      executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -233,7 +233,7 @@ async function handler(req, res) {
     }
     
     // SECURITY: Removed sensitive result logging
-    
+
     if (!result.success) {
       // Update audit as failed with detailed error information
       const errorMsg = result.errorMessage || result.errorType || 'Scraping failed';

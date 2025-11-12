@@ -20,11 +20,11 @@ CREATE TABLE IF NOT EXISTS transactions (
 
 CREATE TABLE IF NOT EXISTS vendor_credentials (
 	id SERIAL PRIMARY KEY,
-    id_number VARCHAR(100),
-	username VARCHAR(100),
+    id_number VARCHAR(300),
+	username VARCHAR(300),
 	vendor VARCHAR(100) NOT NULL,
-    password VARCHAR(100),
-    card6_digits VARCHAR(100),
+    password VARCHAR(300),
+    card6_digits VARCHAR(300),
     nickname VARCHAR(100),
 	bank_account_number VARCHAR(100),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
