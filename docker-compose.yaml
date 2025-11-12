@@ -22,6 +22,19 @@ services:
       timeout: 5s
       retries: 5
 
+  # adminer:
+  #   image: adminer:latest
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     clarify-db:
+  #       condition: service_healthy
+  #   networks:
+  #     - clarify-network
+  #   environment:
+  #     ADMINER_DEFAULT_SERVER: clarify-db
+
   clarify-app:
     build:
       context: ./app
